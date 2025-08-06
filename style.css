@@ -1,0 +1,306 @@
+/* General Styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: black;
+  color: white;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px 50px;
+  background-color: aqua;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+nav ul li {
+  margin-right: 30px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color:rgb(8, 80, 113);
+  font-size: 25px;
+  transition: color 0.3s ease;
+  text-align: center;
+  animation: slideInText 3s ease-in-out forwards;
+  display: inline;
+}
+
+nav ul li a:hover {
+  color: blue;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: start;
+  animation: cubic-bezier(0.215, 0.610, 0.355, 1) ease-in 5s infinite;
+  display: flex;
+  width: 50%;
+  display: inline;
+}
+
+.blue {
+  font-size: larger;
+  color: rgb(8, 80, 113);
+  text-transform: uppercase;
+  animation: slideInText 3s ease-in-out forwards;
+}
+
+.white {
+  font-size: medium;
+  color: rgb(4, 33, 61);
+  text-transform: lowercase;
+  animation: slideInText 3s ease-in-out forwards;
+}
+
+/* Align Navigation to Left and Logo to Right */
+nav {
+  flex-grow: 1;
+}
+
+nav ul {
+  justify-content: flex-end;
+}
+
+@keyframes slideInText {
+  from {
+      opacity: 0;
+      transform: translateX(50px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+h1 {
+  position: absolute;
+  left: -100%;  /* Start off-screen to the left */
+  text-align: center;
+  font-size: 70px;
+  color: aqua;
+  line-height: 3;
+  animation: slideIn 3s ease-in-out forwards;  /* Apply the slideIn animation */
+  top: 35%;  /* Position vertically */
+transform: translateY(-50%);  /* Center vertically */
+}
+
+@keyframes slideIn {
+  0% {
+    left: -100%; /* Off-screen to the left */
+    opacity: 0;  /* Invisible */
+  }
+  100% {
+    left: 20%;  /* End position at 20% from the left */
+    opacity: 1;  /* Fully visible */
+     
+  }
+}
+
+
+@keyframes slideIn {
+  0% {
+    left: -100%; /* Off-screen to the left */
+    opacity: 0; /* Invisible */
+  }
+  100% {
+    left: 50%; /* Stop at the center (or any desired position) */
+    opacity: 1; /* Fully visible */
+    transform: translateY(-50%) translateX(-50%); /* Adjust for perfect centering */
+  }
+}
+
+p {
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  font-size: 40px;
+  text-align: left;
+  line-height: 2;
+}
+
+h2 {
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  font-size: 40px;
+  text-align: left;
+  line-height: 10;
+}
+
+
+
+
+
+
+
+.social-icons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center; /* Centers the icons horizontally */
+  gap: 30px; /* Spacing between icons */
+  bottom: 150px; /* move slightly down */
+}
+
+.social-icons a {
+  text-decoration: solid;
+  display: inline-block;
+  transition: transform 0.3s ease; /* Smooth hover transition */
+}
+
+.social-icons img {
+  width: 40px; /* Resize icons */
+  height: 40px; /* Resize icons */
+}
+
+.social-icons a:hover img {
+  transform: scale(1.2); /* Zoom effect when hovering over icons */
+}
+
+
+/* Smaller screens like mobile */
+@media (max-width: 768px) {
+  .animated-text {
+    font-size: 8vw;  /* Increase the font size slightly for smaller screens */
+    left: -50%;  /* Adjust starting position to ensure it's off-screen but visible */
+  }
+
+  h2 {
+    font-size: 18px;  /* Smaller font for headings on smaller screens */
+  }
+
+  p {
+    font-size: 16px;  /* Slightly smaller paragraph font */
+  }
+}
+
+/* For even smaller screens, like portrait mobile */
+@media (max-width: 480px) {
+  .animated-text {
+    font-size: 10vw;  /* Larger font size on very small screens */
+    left: -60%;  /* Further adjust starting position for very small screens */
+  }
+
+  h2 {
+    font-size: 16px;  /* Even smaller heading font */
+  }
+
+  p {
+    font-size: 14px;  /* Even smaller paragraph font */
+  }
+}
+/* Container for the icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 150px;
+  margin-bottom: 40px;
+  position: relative;
+  animation: slideIn 3s ease-in-out forwards;  /* Apply the slideIn animation */
+  top: 25%;  /* Position vertically */
+  bottom: 20%;
+transform: translateY(-50%);  /* Center vertically */
+margin-left: 0%;
+margin-right: 10;
+}
+
+
+/* Style for each icon link */
+.social-icons {
+  font-size: 2rem;  /* Size of the icon */
+  color: #333;  /* Default icon color */
+  text-decoration: none;  /* Remove underline */
+  opacity: 0;
+  transform: translateX(-100px);
+ /* animation: slideInEffect 3s ease forwards;*/
+ animation: slideIn 3s ease-in-out forwards;  /* Apply the slideIn animation */
+  transition: color 0.3s ease, transform 0.3s ease;
+
+}
+
+/* Specific color styles for each social media icon */
+.social-icon.facebook {
+  color:rgb(17, 36, 162); /* Facebook color */
+  
+}
+
+.social-icon.instagram {
+  color: #e4405f; /* Instagram color */
+}
+
+.social-icon.twitter {
+  color: rgb(186, 117, 129); /* Twitter color */
+}
+.social-icon.linkedin {
+  color: #0077b5; /* LinkedIn color */
+}
+
+/* Hover effects */
+.social-icon:hover {
+  color: #fff;  /* Change color to white on hover */
+  transform: scale(1.2);  /* Slight zoom effect */
+}
+/* Keyframes for slide-in effect */
+@keyframes slideInEffect {
+  to {
+    opacity: 1;
+    transform: translateX(0);  /* Slide to original position */
+  }
+
+
+
+
+}
+
+  .my-image {
+  width: 400px; /* Makes the image smaller */
+  height: auto; /* Maintains aspect ratio */
+  border: 50% ;
+  border-radius: 0%;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  float:right; /* Floats the image to the right */
+  margin-left: 20px; /* Adds space between the image and any content on the left */
+  margin-top: -150px;
+  animation: moveFromRight 3s ease-out forwards; /* Trigger the animation */
+}
+
+@keyframes moveFromRight {
+  0% {
+      transform: translateX(100%); /* Start from the right (off-screen) */
+      opacity: 0; /* Start fully transparent */
+  }
+  100% {
+      transform: translateX(0); /* Stop at the original position */
+      opacity: 1; /* End fully visible */
+  }
+}
+
+   
